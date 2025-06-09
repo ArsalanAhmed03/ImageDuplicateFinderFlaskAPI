@@ -16,4 +16,4 @@ COPY . .
 
 # Expose the port and start the app
 ENV PORT 10000
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000"]
+CMD gunicorn app:app --bind 0.0.0.0:$PORT
