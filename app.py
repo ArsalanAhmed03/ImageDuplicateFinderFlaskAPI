@@ -4,7 +4,7 @@ from flask_cors import CORS
 from image_logic import find_duplicates_by_message_part
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/process-images": {"origins": "*"}})
 
 @app.route('/process-images', methods=['POST'])
 def process_images():
